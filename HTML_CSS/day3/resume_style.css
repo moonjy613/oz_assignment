@@ -1,0 +1,507 @@
+/* ========================================
+   1. 전체 페이지 레이아웃
+======================================== */
+
+body {
+    text-align: left;
+    font-family: 'Pretendard', system-ui, -apple-system,
+                 BlinkMacSystemFont, 'Segoe UI', Roboto,
+                 Oxygen, Ubuntu, Cantarell, 'Open Sans',
+                 'Helvetica Neue', sans-serif;
+
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    margin: 0;
+    min-height: 100vh;
+
+    /* 사이드바와 본문을 가로로 배치 */
+    display: flex;
+    flex-direction: row;
+}
+
+
+/* ========================================
+   2. 사이드바
+======================================== */
+
+.sidebar {
+    background-color: #333;
+    color: #fff;
+
+    /* 늘어나거나 줄어들지 않고 200px 유지 */
+    flex: 0 0 200px;
+
+    height: 100vh;
+    box-sizing: border-box;
+    padding-top: 40px;
+
+    /* 스크롤해도 화면 상단에 유지 */
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    z-index: 1000;
+}
+
+.sidebar-container {
+    padding: 0 20px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    /* 메뉴를 세로 방향으로 배치 */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95em;
+    transition: color 0.3s;
+}
+
+.sidebar-menu li a:hover {
+    color: #007bff;
+}
+
+
+/* ========================================
+   3. 본문 레이아웃
+======================================== */
+
+.main-wrapper {
+
+    /* 사이드바를 제외한 나머지 공간 차지 */
+    flex: 1;
+
+    /* 콘텐츠 때문에 화면이 넘치는 현상 방지 */
+    min-width: 0;
+
+    /* 이력서 컨테이너를 중앙에 배치 */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 40px 0;
+}
+
+.container {
+    width: 100%;
+
+    /* 기존 800px + 좌우 padding 80px 유지 */
+    max-width: 880px;
+    box-sizing: border-box;
+
+    background-color: #fff;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+
+    min-height: 100vh;
+}
+
+
+/* ========================================
+   4. 프로필 영역
+======================================== */
+
+#resume-header {
+    border-bottom: 2px solid #333;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.header-content {
+
+    /* 프로필 텍스트와 이미지를 가로 배치 */
+    display: flex;
+
+    /* 양쪽 끝으로 배치 */
+    justify-content: space-between;
+
+    /* 세로 방향 중앙 정렬 */
+    align-items: center;
+}
+
+.header-text {
+    min-width: 0;
+}
+
+#resume-header h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.5em;
+    color: #222;
+}
+
+/* 연락처 정보를 Flexbox로 배치 */
+.contact-info {
+    display: flex;
+    flex-direction: row;
+
+    /* 공간이 부족하면 다음 줄로 이동 */
+    flex-wrap: wrap;
+
+    /* 연락처 사이의 간격 */
+    column-gap: 24px;
+    row-gap: 5px;
+
+    align-items: baseline;
+}
+
+#resume-header span {
+    color: #666;
+    font-size: 0.95em;
+}
+
+#resume-header i {
+    color: #555;
+    width: 20px;
+}
+
+.header-text a {
+    font-size: 1em;
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.header-text a:hover {
+    text-decoration: underline;
+}
+
+.profile-photo {
+
+    /* 공간이 부족해도 이미지 크기 유지 */
+    flex-shrink: 0;
+}
+
+.profile-photo img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #eee;
+}
+
+
+/* ========================================
+   5. 공통 제목 스타일
+======================================== */
+
+main h2 {
+    font-size: 1.5em;
+    border-left: 5px solid #333;
+    padding-left: 15px;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+
+/* ========================================
+   6. Introduction
+======================================== */
+
+/* 기존 선택자 유지 */
+#introduce p {
+    color: #555;
+    font-size: 1.05em;
+    margin-bottom: 30px;
+    white-space: pre-line;
+}
+
+
+/* ========================================
+   7. Skills
+======================================== */
+
+.skills-group {
+    margin-bottom: 20px;
+    padding-left: 15px;
+}
+
+.skills-group h3 {
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.skills-container {
+
+    /* 태그를 가로 방향으로 배치 */
+    display: flex;
+
+    /* 공간이 부족하면 줄바꿈 */
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.skill-tag {
+    background-color: #f0f2f5;
+    color: #476282;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+}
+
+
+/* ========================================
+   8. Experience
+======================================== */
+
+.experience-item {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.experience-item:last-child {
+    border-bottom: none;
+}
+
+/* 공통 Flexbox 정렬 */
+.experience-info,
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.experience-info {
+    align-items: stretch;
+    margin-bottom: 5px;
+}
+
+/* 기존 선택자 유지 */
+.experience-info .company {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #222;
+}
+
+.experience-info .period {
+    color: #888;
+    font-size: 0.9em;
+}
+
+.experience-item .role {
+
+    /* 직책과 직급을 가로 배치 */
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+
+    margin-bottom: 10px;
+}
+
+.experience-item .position {
+    font-weight: 600;
+    color: #555;
+}
+
+.experience-item .rank {
+    font-weight: 500;
+    color: #888;
+    font-size: 0.9em;
+    padding-left: 8px;
+    border-left: 1px solid #ddd;
+}
+
+.experience-item .details {
+    margin: 0;
+    padding-left: 20px;
+    color: #666;
+    font-size: 0.95em;
+}
+
+.experience-item .details li {
+    margin-bottom: 5px;
+}
+
+
+/* ========================================
+   9. Project
+======================================== */
+
+.project {
+    margin-top: 15px;
+    padding-left: 10px;
+    border-left: 2px solid #eee;
+}
+
+.project-header {
+    align-items: baseline;
+    margin-bottom: 5px;
+}
+
+.project-name {
+    font-weight: 600;
+    font-size: 0.95em;
+    color: #444;
+}
+
+.project-period {
+    font-size: 0.8em;
+    color: #999;
+}
+
+
+/* ========================================
+   10. Education
+======================================== */
+
+.education-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.education-table th {
+    text-align: left;
+    width: 150px;
+    color: #888;
+    font-weight: 400;
+    font-size: 0.9em;
+    padding: 10px 0;
+}
+
+.education-table td {
+    padding: 10px 0;
+    color: #444;
+    font-weight: 500;
+}
+
+
+/* ========================================
+   11. 반응형 웹 - 태블릿
+   화면 너비가 1024px 이하일 때 적용
+======================================== */
+
+@media (max-width: 1024px) {
+
+    .main-wrapper {
+        padding: 20px;
+    }
+
+    .container {
+        padding: 30px;
+    }
+
+    .contact-info {
+        column-gap: 15px;
+        row-gap: 8px;
+    }
+}
+
+
+/* ========================================
+   12. 반응형 웹 - 모바일
+   화면 너비가 768px 이하일 때 적용
+======================================== */
+
+@media (max-width: 768px) {
+
+    body {
+
+        /* 가로 배치에서 세로 배치로 변경 */
+        flex-direction: column;
+    }
+
+    .sidebar {
+
+        /* 왼쪽 사이드바를 상단 메뉴로 변경 */
+        flex: 0 0 auto;
+        width: 100%;
+        height: auto;
+        padding: 15px 0;
+    }
+
+    .sidebar-menu {
+
+        /* 세로 메뉴를 가로 메뉴로 변경 */
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .main-wrapper {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 15px;
+    }
+
+    .container {
+        padding: 25px;
+    }
+
+    .header-content {
+
+        /* 프로필 사진을 텍스트 위에 배치 */
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .header-text {
+        text-align: center;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+}
+
+
+/* ========================================
+   13. 반응형 웹 - 작은 모바일
+   화면 너비가 480px 이하일 때 적용
+======================================== */
+
+@media (max-width: 480px) {
+
+    .container {
+        padding: 20px;
+    }
+
+    .sidebar-menu {
+        gap: 15px;
+    }
+
+    #resume-header h1 {
+        font-size: 2em;
+    }
+
+    .profile-photo img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .experience-info,
+    .project-header {
+
+        /* 이름과 기간을 세로 방향으로 배치 */
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3px;
+    }
+
+    .skills-container {
+        gap: 8px;
+    }
+
+    .skill-tag {
+        font-size: 0.8em;
+    }
+}

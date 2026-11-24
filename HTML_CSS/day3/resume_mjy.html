@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume</title>
+
+    <link rel="stylesheet" href="resume_style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- 사이드바 -->
+    <nav class="sidebar">
+        <div class="sidebar-container">
+            <ul class="sidebar-menu">
+                <li><a href="#resume">이력서</a></li>
+                <li><a href="#portfolio">포트폴리오</a></li>
+                <li><a href="#">PDF 내려받기</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 추가: 사이드바를 제외한 본문 영역 -->
+    <div class="main-wrapper">
+
+        <div id="resume" class="container">
+            <main>
+
+                <!-- 프로필 영역 -->
+                <section id="resume-header">
+
+                    <div class="header-content">
+
+                        <div class="header-text">
+                            <h1>moonjy</h1>
+
+                            <!-- 추가: 연락처 Flexbox 컨테이너 -->
+                            <div class="contact-info">
+
+                                <span>
+                                    <i class="fa-solid fa-mobile-screen"></i>&nbsp;010-1234-5678
+                                </span>
+
+                                <span>
+                                    <i class="fa-solid fa-at"></i>&nbsp;moonjy@example.com
+                                </span>
+
+                                <span>
+                                    <i class="fa-brands fa-github"></i>
+                                    <a href="https://github.com/moonjy613/oz_assignment.git">
+                                        moonjy's GitHub
+                                    </a>
+                                </span>
+
+                            </div>
+                        </div>
+
+                        <div class="profile-photo">
+                            <img src="./히힛.webp" alt="히힛 Profile Photo">
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- 자기소개 -->
+                <section id="Introduce">
+                    <h2>Introduction</h2>
+
+                    <p>
+                        안녕하세요 먼지입니다.
+                        오즈게임 1급이 되는 그 날 까지 열심히 해보겠습니다!
+                    </p>
+                </section>
+
+                <!-- Skills -->
+                <h2>Skills</h2>
+
+                <div class="skills-group">
+                    <h3>Sudoku (스도쿠)</h3>
+
+                    <div class="skills-container">
+                        <span class="skill-tag">쉬움 (34칸): 2분 컷</span>
+                        <span class="skill-tag">보통 (44칸): 3분 컷</span>
+                        <span class="skill-tag">어려움 (52칸): 5분 컷</span>
+                    </div>
+                </div>
+
+                <div class="skills-group">
+                    <h3>Tetris (테트리스)</h3>
+
+                    <div class="skills-container">
+                        <span class="skill-tag">회색벽돌 쏘기 전문</span>
+                    </div>
+                </div>
+
+                <!-- Experience -->
+                <h2>Experience</h2>
+
+                <div class="experience-item">
+
+                    <div class="experience-info">
+                        <span class="Company">오즈게임</span>
+                        <span class="period">2026.11 ~ current</span>
+                    </div>
+
+                    <div class="role">
+                        <span class="position">플레이어</span>
+                        <span class="rank">사원</span>
+                    </div>
+
+                    <!-- 스도쿠 -->
+                    <div class="project">
+
+                        <div class="project-header">
+                            <span class="project-name">스도쿠 10급</span>
+                            <span class="project-period">2026.11 ~ current</span>
+                        </div>
+
+                        <ul class="details">
+                            <li>16 승</li>
+                            <li>0 패</li>
+                            <li>0 무</li>
+                            <li>승률 100%</li>
+                        </ul>
+
+                    </div>
+
+                    <!-- 테트리스 -->
+                    <div class="project">
+
+                        <div class="project-header">
+                            <span class="project-name">테트리스 8급</span>
+                            <span class="project-period">2026.11 ~ current</span>
+                        </div>
+
+                        <ul class="details">
+                            <li>54 승</li>
+                            <li>5 패</li>
+                            <li>0 무</li>
+                            <li>승률 92%</li>
+                        </ul>
+
+                    </div>
+
+                    <!-- 알까기 -->
+                    <div class="project">
+
+                        <div class="project-header">
+                            <span class="project-name">알까기 13급</span>
+                            <span class="project-period">2026.11 ~ current</span>
+                        </div>
+
+                        <ul class="details">
+                            <li>1 승</li>
+                            <li>0 패</li>
+                            <li>0 무</li>
+                            <li>승률 100%</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <!-- Education -->
+                <h2>Education</h2>
+
+                <table>
+                    <tr>
+                        <th>2026 ~ current</th>
+                        <td>오즈코딩스쿨 (스도쿠 전공)</td>
+                    </tr>
+                </table>
+
+            </main>
+        </div>
+
+    </div>
+
+</body>
+</html>
