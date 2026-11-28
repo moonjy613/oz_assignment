@@ -1,0 +1,259 @@
+
+/* ========================================
+   1. 전체 페이지
+======================================== */
+
+body {
+    background: linear-gradient(
+        135deg,
+        #100e20,
+        #1e1638,
+        #100e20
+    );
+
+    color: #f5f3ff;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+
+/* ========================================
+   2. 상단 배너
+======================================== */
+
+.hero {
+    background: linear-gradient(
+        120deg,
+        #312e81,
+        #581c87
+    );
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 30px rgba(124, 58, 237, 0.2);
+}
+
+.hero-label {
+    color: #c4b5fd;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.hero p {
+    color: #ddd6fe;
+}
+
+
+/* ========================================
+   3. 탭 버튼
+======================================== */
+
+.market-btn {
+    background-color: #28243f;
+    color: #c4b5fd;
+    border: 1px solid #45405f;
+    padding: 10px 20px;
+}
+
+.market-btn:hover {
+    background-color: #4c1d95;
+    color: white;
+}
+
+.market-btn.active {
+    background-color: #7c3aed;
+    color: white;
+    border-color: #7c3aed;
+}
+
+
+/* ========================================
+   4. API 연결 상태
+======================================== */
+
+.refresh-text {
+    color: #a5a0bc;
+    font-size: 13px;
+}
+
+/* 정상 연결 */
+.refresh-text.connected {
+    color: #5eead4;
+}
+
+/* 연결 오류 */
+.refresh-text.error {
+    color: #fb7185;
+}
+
+/* 요청 제한 */
+.refresh-text.warning {
+    color: #fbbf24;
+}
+
+
+/* ========================================
+   5. 검색창
+======================================== */
+
+#searchInput {
+    background-color: #28243f;
+    color: white;
+    border: 1px solid #45405f;
+    max-width: 280px;
+}
+
+#searchInput::placeholder {
+    color: #a5a0bc;
+}
+
+#searchInput:focus {
+    background-color: #28243f;
+    color: white;
+    border-color: #a78bfa;
+    box-shadow: 0 0 10px rgba(167, 139, 250, 0.3);
+}
+
+
+/* ========================================
+   6. Glass 패널
+======================================== */
+
+.glass-panel {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ========================================
+   7. Bootstrap 테이블
+======================================== */
+
+.table {
+    --bs-table-bg: transparent;
+    --bs-table-color: #f5f3ff;
+    --bs-table-border-color: #45405f;
+
+    --bs-table-hover-bg: rgba(167, 139, 250, 0.1);
+    --bs-table-hover-color: #ffffff;
+
+    white-space: nowrap;
+}
+
+.table th {
+    color: #a5a0bc;
+    font-size: 13px;
+    font-weight: normal;
+    padding: 16px 12px;
+}
+
+.table td {
+    padding: 14px 12px;
+    font-size: 14px;
+}
+
+/* 관심항목 열 */
+.table th:first-child,
+.table td:first-child {
+    text-align: center;
+}
+
+/* 심볼 열 */
+.table td:nth-child(2) {
+    font-weight: bold;
+}
+
+/* 가격 관련 열 */
+.table th:nth-child(n+3),
+.table td:nth-child(n+3) {
+    text-align: right;
+}
+
+
+/* ========================================
+   8. 관심항목 별표 버튼
+======================================== */
+
+.favorite-star {
+    background: transparent;
+    border: none;
+    color: #77728f;
+    font-size: 23px;
+    cursor: pointer;
+}
+
+.favorite-star.selected {
+    color: #c4b5fd;
+}
+
+.favorite-star:hover {
+    color: white;
+}
+
+
+/* ========================================
+   9. 가격 변동률
+======================================== */
+
+.table .positive {
+    color: #5eead4;
+    font-weight: bold;
+
+    --bs-table-color-state: #5eead4;
+}
+
+.table .negative {
+    color: #fb7185;
+    font-weight: bold;
+
+    --bs-table-color-state: #fb7185;
+}
+
+.table .neutral {
+    color: #a5a0bc;
+
+    --bs-table-color-state: #a5a0bc;
+}
+
+
+/* ========================================
+   10. 검색 결과 없음
+======================================== */
+
+.table .empty-message {
+    text-align: center;
+    color: #a5a0bc;
+    padding: 40px;
+}
+
+
+/* ========================================
+   11. 하단 정보
+======================================== */
+
+footer {
+    color: #a5a0bc;
+}
+
+
+/* ========================================
+   12. 반응형 디자인
+======================================== */
+
+@media (max-width: 768px) {
+
+    #searchInput {
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .table td,
+    .table th {
+        font-size: 12px;
+        padding: 10px;
+    }
+}
